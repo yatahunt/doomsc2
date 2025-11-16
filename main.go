@@ -1,5 +1,7 @@
-package doomsc2
-import sg3
+package main
+
+import "doomsc2/sg3"
+
 type Doomsg3 struct {
 	*sg3.Bot
 }
@@ -24,9 +26,6 @@ func (b *Doomsg3) OnGameFinished() {
 
 }
 func main() {
-	Start()
-}
-func Start() {
 	genericBot := sg3.NewBot(sg3.APIRaceProtoss, "Doom")
 	Doomsg3 := &Doomsg3{Bot: genericBot}
 	// ThunderbirdAIE
@@ -40,7 +39,6 @@ func Start() {
 
 	Doomsg3.VsComputer(sg3.APIRaceTerran, sg3.APIDifficultyCheatInsane, sg3.APIAIBuildMacro, "MagannathaAIE_v2")
 	Doomsg3.Start(Doomsg3)
-
 }
 
 type Dummysg3 struct {
